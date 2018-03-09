@@ -16,7 +16,7 @@ import { LoginService } from './login.service';
 import { RegisterService } from './register.service';
 import { AlertService } from './alert.service';
 import { AlertComponent } from './alert/alert.component';
-
+import {ServiceUrlProviderService } from './service-url-provider.service';
 
 @NgModule({
   declarations: [
@@ -34,11 +34,11 @@ import { AlertComponent } from './alert/alert.component';
     HttpClientModule
   ],
   providers: [
-    LoginService,
     RegisterService,
     WorkoutService,
     WorkoutListService,
-    AlertService
+    AlertService,
+    ServiceUrlProviderService
   ],
   bootstrap: [AppComponent]
 })
