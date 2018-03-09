@@ -1,0 +1,31 @@
+ 
+     <a href="#!/login" class="btn btn-link">Logout</a>
+     <div class="col-md-6 col-md-offset-3">
+
+        <div class="container">
+  <h2>Workout Transactions</h2>
+  <div class="table-responsive">     
+  <table  class="table table-hover">
+    <thead>
+      <tr>
+        <th>Start Time</th>
+        <th>End Time</th>
+        <th>Duration</th>
+        <th>Calories Burnt</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let workoutTxn of workoutTxnList; let i = index" (click)="redirect()" [class.active]="i == selectedRow">
+        <td>{{workoutTxn[1].toString().replace(",",":")}}</td>
+        <td>{{workoutTxn[2]}}</td>
+        <td>{{workoutTxn[3]}}</td>
+        <td>{{workoutTxn[4]}}</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="form-actions">
+    <button class="btn btn-link " (click)="redirect()">Add</button>
+   </div>
+</div>
+    </div>

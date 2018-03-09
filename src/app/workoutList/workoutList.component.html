@@ -14,7 +14,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let workout of workoutList; let i = index" (click)="redirect()" [class.active]="i == selectedRow">
+      <tr *ngFor="let workout of workoutList; let i = index" (click)="WorkoutTxnredirect()" [class.active]="i == selectedRow">
         <td>{{workout.title}}</td>
         <td>{{workout.calBurntPerUnitTime}}</td>
         <td>{{workout.unitTime}}</td>

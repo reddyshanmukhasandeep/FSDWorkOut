@@ -10,10 +10,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { WorkoutComponent } from './workout/workout.component';
 import { WorkoutListComponent } from './workoutList/workoutList.component';
-import { WorkoutListService } from './workoutList.service';
-import { WorkoutService } from './workout.service';
-import { LoginService } from './login.service';
-import { RegisterService } from './register.service';
+import { WorkoutTxnComponent } from './workoutTxn/workoutTxn.component';
 import { AlertService } from './alert.service';
 import { AlertComponent } from './alert/alert.component';
 import {ServiceUrlProviderService } from './service-url-provider.service';
@@ -25,6 +22,7 @@ import {ServiceUrlProviderService } from './service-url-provider.service';
     RegisterComponent,
     WorkoutComponent,
     WorkoutListComponent,
+    WorkoutTxnComponent,
     AlertComponent
   ],
   imports: [
@@ -34,9 +32,6 @@ import {ServiceUrlProviderService } from './service-url-provider.service';
     HttpClientModule
   ],
   providers: [
-    RegisterService,
-    WorkoutService,
-    WorkoutListService,
     AlertService,
     ServiceUrlProviderService
   ],

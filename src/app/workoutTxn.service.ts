@@ -4,18 +4,18 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ServiceUrlProviderService } from './service-url-provider.service';
 
 @Injectable()
-export class WorkoutListService {
+export class WorkoutTxnService {
 
-  private getWorkoutListUrl : string;
+  private getWorkoutLisTxntUrl : string;
   constructor(
     private http: HttpClient,
     private urlProv: ServiceUrlProviderService
   ) { 
-     this.getWorkoutListUrl = urlProv.getCompleteServiceUrl("workout");
+      this.getWorkoutLisTxntUrl = urlProv.getCompleteServiceUrl("workoutTxn");
   }
 
-  getWorkoutList(): Observable<any>{
-    return this.http.get<any>(this.getWorkoutListUrl);
+  getWorkoutTxnList(user: any): Observable<any>{
+    return this.http.get<any>(this.getWorkoutLisTxntUrl+"/"+2);
   }
 
 }

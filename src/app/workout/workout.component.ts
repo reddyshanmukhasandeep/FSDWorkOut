@@ -6,7 +6,8 @@ import { AlertService } from '../alert.service';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './workout.component.html',
-  styleUrls: ['./workout.component.css']
+  styleUrls: ['./workout.component.css'],
+  providers:[WorkoutService]
 })
 export class WorkoutComponent implements OnInit {
 

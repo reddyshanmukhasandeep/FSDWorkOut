@@ -6,7 +6,8 @@ import { AlertService } from '../alert.service';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './workoutList.component.html',
-  styleUrls: ['./workoutList.component.css']
+  styleUrls: ['./workoutList.component.css'],
+  providers:[WorkoutListService]
 })
 export class WorkoutListComponent implements OnInit {
 
@@ -36,6 +37,9 @@ export class WorkoutListComponent implements OnInit {
   }
   redirect() {
     this.router.navigate(['./workout']);
+  }
+  WorkoutTxnredirect() {
+    this.router.navigate(['./workoutTxn']);
   }
  
 }
