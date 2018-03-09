@@ -1,6 +1,6 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { WorkoutService } from './register.service';
+import { WorkoutService } from './workout.service';
 
 describe('WorkoutService', () => {
   beforeEach(() => {

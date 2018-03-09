@@ -11,6 +11,7 @@ import { AlertService } from '../alert.service';
 export class WorkoutComponent implements OnInit {
 
   workout: any = {};
+  user: any={};
   loading = false;
 
   constructor(
@@ -24,16 +25,21 @@ export class WorkoutComponent implements OnInit {
 
   defineWorkout() {
     this.loading = true;
+    this.workout.user=this.user;
     this.workoutService.defineWorkout(this.workout)
         .subscribe(
             data => {
                 this.alertService.success('Workout Created successfully', true);
-                this.router.navigate(['/workout']);
+                this.router.navigate(['workoutList']);
             },
             error => {
                 this.alertService.error(error.error.message);
+                this.router.navigate(['workoutList']);
                 this.loading = false;
             });
+  }
+  redirect() {
+    this.router.navigate(['./workoutList']);
   }
 
 }

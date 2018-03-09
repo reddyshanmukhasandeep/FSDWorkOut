@@ -1,0 +1,29 @@
+ 
+     <a href="#!/login" class="btn btn-link">Logout</a>
+     <div class="col-md-6 col-md-offset-3">
+
+        <div class="container">
+  <h2>Workout List</h2>
+  <div class="table-responsive">     
+  <table  class="table table-hover">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Calories Burnt Per Unit Time</th>
+        <th>Unit Time</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let workout of workoutList; let i = index" (click)="redirect()" [class.active]="i == selectedRow">
+        <td>{{workout.title}}</td>
+        <td>{{workout.calBurntPerUnitTime}}</td>
+        <td>{{workout.unitTime}}</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="form-actions">
+    <button class="btn btn-link " (click)="redirect()">Add</button>
+   </div>
+</div>
+    </div>

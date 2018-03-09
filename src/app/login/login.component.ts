@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
     this.loginService.login(this.model.username, this.model.password)
         .subscribe(
             data => {
-               this.router.navigate(['workout']);
+               this.router.navigate(['workoutList']);
             },
             error => {
                 this.alertService.error(error.error.message);

@@ -9,6 +9,9 @@ import { AppRoutingModule } from './/app-routing.module';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { WorkoutComponent } from './workout/workout.component';
+import { WorkoutListComponent } from './workoutList/workoutList.component';
+import { WorkoutListService } from './workoutList.service';
+import { WorkoutService } from './workout.service';
 import { LoginService } from './login.service';
 import { RegisterService } from './register.service';
 import { AlertService } from './alert.service';
@@ -21,6 +24,7 @@ import { AlertComponent } from './alert/alert.component';
     LoginComponent,
     RegisterComponent,
     WorkoutComponent,
+    WorkoutListComponent,
     AlertComponent
   ],
   imports: [
@@ -32,7 +36,8 @@ import { AlertComponent } from './alert/alert.component';
   providers: [
     LoginService,
     RegisterService,
-//    WorkoutService,
+    WorkoutService,
+    WorkoutListService,
     AlertService
   ],
   bootstrap: [AppComponent]
