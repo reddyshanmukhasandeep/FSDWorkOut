@@ -41,5 +41,7 @@ export class WorkoutTxnComponent implements OnInit {
   redirect() {
     this.router.navigate(['./workoutTxnAdd']);
   }
- 
+  backRedirect() {
+    this.router.navigate(['./workoutList']);
+  }
 }

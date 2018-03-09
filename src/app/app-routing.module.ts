@@ -5,6 +5,7 @@ import { RegisterComponent } from './register/register.component';
 import { WorkoutComponent } from './workout/workout.component';
 import { WorkoutListComponent } from './workoutList/workoutList.component';
 import { WorkoutTxnComponent } from './workoutTxn/workoutTxn.component';
+import { WorkoutTxnAddComponent } from './workoutTxnAdd/workoutTxnAdd.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -12,7 +13,8 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent},
   { path: 'workout', component: WorkoutComponent},
   { path: 'workoutList', component: WorkoutListComponent},
-  { path: 'workoutTxn', component: WorkoutTxnComponent}
+  { path: 'workoutTxn', component: WorkoutTxnComponent},
+  { path: 'workoutTxnAdd', component: WorkoutTxnAddComponent}
 
 ];
 

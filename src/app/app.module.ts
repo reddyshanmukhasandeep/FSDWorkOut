@@ -11,6 +11,7 @@ import { RegisterComponent } from './register/register.component';
 import { WorkoutComponent } from './workout/workout.component';
 import { WorkoutListComponent } from './workoutList/workoutList.component';
 import { WorkoutTxnComponent } from './workoutTxn/workoutTxn.component';
+import { WorkoutTxnAddComponent } from './workoutTxnAdd/workoutTxnAdd.component';
 import { AlertService } from './alert.service';
 import { AlertComponent } from './alert/alert.component';
 import {ServiceUrlProviderService } from './service-url-provider.service';
@@ -23,6 +24,7 @@ import {ServiceUrlProviderService } from './service-url-provider.service';
     WorkoutComponent,
     WorkoutListComponent,
     WorkoutTxnComponent,
+    WorkoutTxnAddComponent,
     AlertComponent
   ],
   imports: [

@@ -1,21 +1,22 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { User } from './models/user';
 import { ServiceUrlProviderService } from './service-url-provider.service';
 
 @Injectable()
-export class RegisterService {
+export class WorkoutTxnAddService {
 
-  private registerUrl : string;
+  private createWorkoutTxntUrl : string;
   constructor(
     private http: HttpClient,
     private urlProv: ServiceUrlProviderService
   ) { 
-    this.registerUrl = urlProv.getCompleteServiceUrl("user/register");
+      this.createWorkoutTxntUrl = urlProv.getCompleteServiceUrl("workoutTxn");
   }
-  
-  register(user: any): Observable<any>{
-    return this.http.post<any>(this.registerUrl, user);
+
+  createWorkoutTxn(workouTxn: any): Observable<any>{
+    console.log("Inside WorkoutTxnAddService");
+    return this.http.post<any>(this.createWorkoutTxntUrl,workouTxn);
   }
+
 }
