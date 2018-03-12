@@ -19,7 +19,7 @@ export class WorkoutListComponent implements OnInit {
   constructor(
     private router: Router,
     private workoutListService: WorkoutListService,
-    private alertService: AlertService
+    private alertService: AlertService,
   ) { 
     this.workoutListService.getWorkoutList();
   }

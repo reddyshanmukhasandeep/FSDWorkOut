@@ -2,10 +2,6 @@
     <h2>Add Workout</h2>
     <form name="form" (ngSubmit)="f.form.valid && defineWorkout()" #f="ngForm" novalidate>
         <div class="form-group" >
-            <label for="userName">User Name</label>
-            <input type="userName" name="userName" id="userName" class="form-control"  [(ngModel)]="user.userName" #userName="ngModel" required />
-        </div>
-        <div class="form-group" >
             <label for="title">Workout Title</label>
             <div class="form-group">
         <select class="form-control" name="title" [(ngModel)]="workout.title" #title="ngModel" required>

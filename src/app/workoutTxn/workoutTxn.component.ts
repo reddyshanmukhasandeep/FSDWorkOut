@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { AlertService } from '../alert.service';
 import { Input } from '@angular/core';
 import { User } from '../models/user';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -13,20 +14,23 @@ import { User } from '../models/user';
 })
 export class WorkoutTxnComponent implements OnInit {
 
+  user:any={};
   workout: any = {};
   loading = false;
   workoutTxnList: any=[];
-  @Input() user: User;
   constructor(
     private router: Router,
     private workoutTxnService: WorkoutTxnService,
-    private alertService: AlertService
+    private alertService: AlertService,
+    private dataService: DataService
   ) { 
     this.workoutTxnService.getWorkoutTxnList(this.user);
   }
 
   ngOnInit() {
-    this.workoutTxnService.getWorkoutTxnList(this.user)
+    this.user=this.dataService;
+    console.log("workoutTxnService userId: "+this.user.userId+" **data: "+this.dataService.userId);
+    this.workoutTxnService.getWorkoutTxnList(this.user.userId)
         .subscribe(
             data => {
               

@@ -15,6 +15,7 @@ import { WorkoutTxnAddComponent } from './workoutTxnAdd/workoutTxnAdd.component'
 import { AlertService } from './alert.service';
 import { AlertComponent } from './alert/alert.component';
 import {ServiceUrlProviderService } from './service-url-provider.service';
+import {DataService } from './data.service';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import {ServiceUrlProviderService } from './service-url-provider.service';
   ],
   providers: [
     AlertService,
-    ServiceUrlProviderService
+    ServiceUrlProviderService,
+    DataService
   ],
   bootstrap: [AppComponent]
 })

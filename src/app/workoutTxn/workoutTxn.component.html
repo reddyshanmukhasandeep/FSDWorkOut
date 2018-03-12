@@ -15,7 +15,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let workoutTxn of workoutTxnList; let i = index" (click)="redirect()" [class.active]="i == selectedRow">
+      <tr *ngFor="let workoutTxn of workoutTxnList; let i = index" [class.active]="i == selectedRow">
         <td>{{workoutTxn[1].toString().replace(",",":")}}</td>
         <td>{{workoutTxn[2]}}</td>
         <td>{{workoutTxn[3]}}</td>

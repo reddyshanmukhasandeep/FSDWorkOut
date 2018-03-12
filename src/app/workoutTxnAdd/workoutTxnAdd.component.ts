@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { WorkoutTxnAddService } from '../workoutTxnAdd.service';
 import { Router } from '@angular/router';
 import { AlertService } from '../alert.service';
-import { Input } from '@angular/core';
 import { User } from '../models/user';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -16,11 +16,11 @@ export class WorkoutTxnAddComponent implements OnInit {
   workoutTxn: any = {};
   loading = false;
   workoutTxnList: any=[];
-  @Input() user: User;
   constructor(
     private router: Router,
     private workoutTxnAddService: WorkoutTxnAddService,
-    private alertService: AlertService
+    private alertService: AlertService,
+    private dataService: DataService
   ) { 
     
   }
@@ -30,6 +30,12 @@ export class WorkoutTxnAddComponent implements OnInit {
   createWorkoutTxn() {
     console.log("Inside workOutTxnAdd");
     this.loading = true;
+    this.workoutTxn.workout=this.dataService;
+    console.log("workoutTxn startTime: "+ this.workoutTxn.startTime);
+    console.log("workoutTxn endTime: "+ this.workoutTxn.endTime);
+
+    console.log("workoutTxn: "+ this.dataService.calBurntPerUnitTime);
+    console.log("workoutTxn: "+ this.workoutTxn);
     this.workoutTxnAddService.createWorkoutTxn(this.workoutTxn)
         .subscribe(
             data => {

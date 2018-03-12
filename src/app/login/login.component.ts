@@ -3,7 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { LoginService } from '../login.service';
 import { AlertService } from '../alert.service';
 import { Input } from '@angular/core';
-// import { User } from '../models/user';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-login',
@@ -14,12 +14,12 @@ export class LoginComponent implements OnInit {
 
   model: any = {};
   loading = false;
-  // @Input() user: User;
   constructor(
     private route: ActivatedRoute,
     private router: Router,
     private loginService: LoginService,
-    private alertService: AlertService
+    private alertService: AlertService,
+    private dataService: DataService
   ) { }
 
   ngOnInit() {
@@ -30,6 +30,7 @@ export class LoginComponent implements OnInit {
     this.loginService.login(this.model.username, this.model.password)
         .subscribe(
             data => {
+               this.dataService.userId =data.UserId;
                this.router.navigate(['workoutList']);
             },
             error => {

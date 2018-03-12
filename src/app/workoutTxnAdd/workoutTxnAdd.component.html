@@ -9,14 +9,14 @@
         <label for="endTime">End Time </label>
         <input class="form-control"    type="datetime-local" [value]="endTime" (change)="date=$event.target.value" [(ngModel)]="workoutTxn.endTime" [ngModelOptions]="{standalone: true}"/>
         </div>
-        <div class="form-group" >
+        <!--<div class="form-group" >
         <label for="duration">Duration</label>
         <input type="text" class="form-control" name="duration" [(ngModel)]="workoutTxn.duration" #duration="ngModel" required />
         </div>
         <div class="form-group" >
         <label for="calBurnt">Amount Of Calories Burnt</label>
         <input type="text" class="form-control" name="calBurnt" [(ngModel)]="workoutTxn.calBurnt" #duration="ngModel" required />
-        </div>
+        </div>-->
         <div class="form-actions">
             <button type="submit" ng-disabled="form.$invalid || vm.dataLoading" class="btn btn-info btn-md">Submit</button>
             <a (click)="redirect()" class="btn btn-link">Cancel</a>
