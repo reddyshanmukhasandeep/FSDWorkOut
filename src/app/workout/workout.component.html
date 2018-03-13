@@ -9,7 +9,7 @@
     <div class="panel-body">
     <form name="form" (ngSubmit)="f.form.valid && defineWorkout()" #f="ngForm" novalidate>
         <div class="form-group" >
-            <label for="title">Workout Title</label>
+            <h5><label for="title">Workout Title</label></h5>
             <div class="form-group">
         <select class="form-control" name="title" [(ngModel)]="workout.title" #title="ngModel" required>
         <option>Jumping Jacks</option>
@@ -22,11 +22,11 @@
             </div>
         </div>
         <div class="form-group" >
-            <label for="amountOfCalPerUnittime">Amount Of Calories Burnt</label>
+            <h5><label for="amountOfCalPerUnittime">Amount Of Calories Burnt</label></h5>
             <input type="number" step ="0.01" name="calBurntPerUnitTime" id="calBurntPerUnitTime" class="form-control" [(ngModel)]="workout.calBurntPerUnitTime"  #calBurntPerUnitTime="ngModel" required />
         </div>
         <div class="form-group" >
-            <label for="unitTime">UniTime</label>
+            <h5><label for="unitTime">UniTime</label></h5>
              <div class="form-group">
         <select class="form-control" name="unitTime" [(ngModel)]="workout.unitTime" #unitTime="ngModel" required >
         <option>HOUR</option>
@@ -36,8 +36,9 @@
             </div>
         </div>
         <div class="form-actions">
-            <button type="submit" ng-disabled="form.$invalid || vm.dataLoading" class="btn btn-info btn-md">Submit</button>
-            <a (click)="redirect()" class="btn btn-link">Cancel</a>
+            <button type="submit" ng-disabled="form.$invalid || vm.dataLoading" class="btn btn-info btn-md btn-lg">Submit</button>
+            <button class="btn btn-info btn-lg" (click)="redirect()">Cancel</button>
+            <!--<a (click)="redirect()" class="btn btn-link btn-lg">Cancel</a>-->
         </div>
     </form>
 </div>
