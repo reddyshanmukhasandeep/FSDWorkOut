@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { WorkoutListService } from '../workoutList.service';
 import { Router } from '@angular/router';
 import { AlertService } from '../alert.service';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -20,6 +21,7 @@ export class WorkoutListComponent implements OnInit {
     private router: Router,
     private workoutListService: WorkoutListService,
     private alertService: AlertService,
+    private dataService: DataService,
   ) { 
     this.workoutListService.getWorkoutList();
   }
@@ -38,7 +40,11 @@ export class WorkoutListComponent implements OnInit {
   redirect() {
     this.router.navigate(['./workout']);
   }
-  WorkoutTxnredirect() {
+  WorkoutTxnredirect(index: number) {
+    this.dataService.calBurntPerUnitTime = this.workoutList[index].calBurntPerUnitTime;
+    this.dataService.unitTime = this.workoutList[index].unitTime;
+   // this.dataService.workoutId = this.workoutList[index].workoutId;
+    this.dataService.setWorkoutId (this.workoutList[index].workoutId);
     this.router.navigate(['./workoutTxn']);
   }
  

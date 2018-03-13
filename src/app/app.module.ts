@@ -14,8 +14,10 @@ import { WorkoutTxnComponent } from './workoutTxn/workoutTxn.component';
 import { WorkoutTxnAddComponent } from './workoutTxnAdd/workoutTxnAdd.component';
 import { AlertService } from './alert.service';
 import { AlertComponent } from './alert/alert.component';
-import {ServiceUrlProviderService } from './service-url-provider.service';
-import {DataService } from './data.service';
+import { ServiceUrlProviderService } from './service-url-provider.service';
+import { DataService } from './data.service';
+import { UserDataService } from './userData.service';
+import { DlDateTimePickerDateModule } from 'angular-bootstrap-datetimepicker';
 
 @NgModule({
   declarations: [
@@ -32,12 +34,14 @@ import {DataService } from './data.service';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    DlDateTimePickerDateModule,
   ],
   providers: [
     AlertService,
     ServiceUrlProviderService,
-    DataService
+    DataService,
+    UserDataService
   ],
   bootstrap: [AppComponent]
 })

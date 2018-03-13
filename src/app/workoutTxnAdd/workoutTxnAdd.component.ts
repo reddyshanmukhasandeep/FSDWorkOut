@@ -5,6 +5,8 @@ import { AlertService } from '../alert.service';
 import { User } from '../models/user';
 import { DataService } from '../data.service';
 
+
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './workoutTxnAdd.component.html',
@@ -16,6 +18,7 @@ export class WorkoutTxnAddComponent implements OnInit {
   workoutTxn: any = {};
   loading = false;
   workoutTxnList: any=[];
+  datemod : string;
   constructor(
     private router: Router,
     private workoutTxnAddService: WorkoutTxnAddService,
@@ -28,14 +31,13 @@ export class WorkoutTxnAddComponent implements OnInit {
   ngOnInit() {
   }
   createWorkoutTxn() {
-    console.log("Inside workOutTxnAdd");
     this.loading = true;
     this.workoutTxn.workout=this.dataService;
-    console.log("workoutTxn startTime: "+ this.workoutTxn.startTime);
-    console.log("workoutTxn endTime: "+ this.workoutTxn.endTime);
-
-    console.log("workoutTxn: "+ this.dataService.calBurntPerUnitTime);
-    console.log("workoutTxn: "+ this.workoutTxn);
+    var startDate = new Date(this.workoutTxn.startTime).toISOString();
+    this.workoutTxn.startTime=startDate.replace('Z','');
+    var endDate = new Date(this.workoutTxn.stopTime).toISOString();
+    this.workoutTxn.stopTime=endDate.replace('Z','');
+    console.log("***********"+this.workoutTxn.stopTime);
     this.workoutTxnAddService.createWorkoutTxn(this.workoutTxn)
         .subscribe(
             data => {

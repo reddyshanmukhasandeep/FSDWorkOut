@@ -16,8 +16,8 @@
     </thead>
     <tbody>
       <tr *ngFor="let workoutTxn of workoutTxnList; let i = index" [class.active]="i == selectedRow">
-        <td>{{workoutTxn[1].toString().replace(",",":")}}</td>
-        <td>{{workoutTxn[2]}}</td>
+        <td>{{workoutTxn[1].toString().split(',').join("-")}}</td>
+        <td>{{workoutTxn[2].toString().split(',').join("-")}}</td>
         <td>{{workoutTxn[3]}}</td>
         <td>{{workoutTxn[4]}}</td>
       </tr>

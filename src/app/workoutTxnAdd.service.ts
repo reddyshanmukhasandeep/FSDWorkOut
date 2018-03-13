@@ -15,7 +15,7 @@ export class WorkoutTxnAddService {
   }
 
   createWorkoutTxn(workouTxn: any): Observable<any>{
-    console.log("Inside WorkoutTxnAddService");
+     console.log("Inside WorkoutTxnAddService");
     return this.http.post<any>(this.createWorkoutTxntUrl,workouTxn);
   }
 

@@ -14,9 +14,9 @@ export class WorkoutTxnService {
       this.getWorkoutLisTxntUrl = urlProv.getCompleteServiceUrl("workoutTxn");
   }
 
-  getWorkoutTxnList(userId: number): Observable<any>{
-    console.log("Url: "+this.getWorkoutLisTxntUrl+"/"+userId);
-    return this.http.get<any>(this.getWorkoutLisTxntUrl+"/"+userId);
+  getWorkoutTxnList(workoutId: Number): Observable<any>{
+    console.log("Url: "+this.getWorkoutLisTxntUrl+"/"+workoutId);
+    return this.http.get<any>(this.getWorkoutLisTxntUrl+"/"+workoutId);
   }
 
 }

@@ -28,12 +28,12 @@ export class WorkoutTxnComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.user=this.dataService;
-    console.log("workoutTxnService userId: "+this.user.userId+" **data: "+this.dataService.userId);
-    this.workoutTxnService.getWorkoutTxnList(this.user.userId)
+    this.workout=this.dataService;
+    console.log("workoutTxnService workout: "+this.workout.workoutId+" **data: "+this.dataService.getWorkoutId());
+    this.workoutTxnService.getWorkoutTxnList(this.dataService.workoutId)
         .subscribe(
             data => {
-              
+               
                this.workoutTxnList=data;
                console.log("Response: "+this.workoutTxnList);
             },

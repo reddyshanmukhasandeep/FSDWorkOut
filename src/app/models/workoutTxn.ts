@@ -1,8 +1,8 @@
 import { Workout } from './workout'; 
 
 export class WorkoutTxn {
-    startTime: string;
-    endTime: string;
+    startTime: String ;
+    stopTime: String ;
     duration: number;
     calBurnt: string;
     workout: Workout;
