@@ -1,5 +1,12 @@
-    <div class="col-md-6 col-md-offset-3">
-    <h2>Add Workout</h2>
+    <div class="container">
+  <div class="jumbotron">
+    <h3>WorkOut Portal</h3>
+  </div>
+<div class="panel panel-primary">
+    <div class="panel-heading"> 
+  <h2>Add Workout</h2>
+    </div>  
+    <div class="panel-body">
     <form name="form" (ngSubmit)="f.form.valid && defineWorkout()" #f="ngForm" novalidate>
         <div class="form-group" >
             <label for="title">Workout Title</label>
@@ -34,3 +41,4 @@
         </div>
     </form>
 </div>
+    </div>

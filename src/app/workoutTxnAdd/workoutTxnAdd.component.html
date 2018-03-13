@@ -1,6 +1,14 @@
-    <div class="col-md-6 col-md-offset-3">
-    <h2>Add Workout Transaction</h2>
-    <form name="form" (ngSubmit)="f.form.valid && createWorkoutTxn()" #f="ngForm" novalidate>
+<div class="container">
+  <div class="jumbotron">
+    <h3>WorkOut Portal</h3>
+  </div>
+<div class="panel panel-primary">
+    <div class="panel-heading"> 
+  <h2>Add Workout Transaction</h2>
+    </div>  
+        <div class="panel-body">
+
+        <form name="form" (ngSubmit)="f.form.valid && createWorkoutTxn()" #f="ngForm" novalidate>
         <div class="form-group" >
         <label for="startTime">Start Time</label>
         <dl-date-time-picker ng-model="myDate" datetime-model="yyyy-MM-ddTHH:mm:ss" [(ngModel)]="workoutTxn.startTime" [ngModelOptions]="{standalone: true}"></dl-date-time-picker>
