@@ -13,18 +13,18 @@
   <table  class="table table-hover">
     <thead>
       <tr>
-        <th><h5>Workout Id</h5></th>
-        <th><h5>Title</h5></th>
-        <th><h5>Calories Burnt Per Unit Time</h5></th>
-        <th><h5>Unit Time</h5></th>
+        <th style="text-align:center"><h5>Workout Id</h5></th>
+        <th style="text-align:center"><h5>Title</h5></th>
+        <th style="text-align:center"><h5>Calories Burnt Per Unit Time</h5></th>
+        <th style="text-align:center"><h5>Unit Time</h5></th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let workout of workoutList; let i = index" (click)="WorkoutTxnredirect(i)" [class.active]="i == selectedRow">
-        <td>{{workout[0]}}</td>
-        <td>{{workout[1]}}</td>
-        <td>{{workout[2]}}</td>
-        <td>{{workout[3]}}</td>
+        <td style="text-align:center">{{workout[0]}}</td>
+        <td style="text-align:center">{{workout[2]}}</td>
+        <td style="text-align:center" >{{workout[1]}}</td>
+        <td style="text-align:center">{{workout[3]}}</td>
       </tr>
     </tbody>
   </table>
