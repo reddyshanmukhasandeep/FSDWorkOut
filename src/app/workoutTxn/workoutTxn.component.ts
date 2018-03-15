@@ -5,12 +5,16 @@ import { AlertService } from '../alert.service';
 import { Input } from '@angular/core';
 import { User } from '../models/user';
 import { DataService } from '../data.service';
+import {WorkoutListService} from '../workoutList.service';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './workoutTxn.component.html',
   styleUrls: ['./workoutTxn.component.css'],
-  providers:[WorkoutTxnService]
+  providers:[
+    WorkoutTxnService,
+    WorkoutListService
+    ]
 })
 export class WorkoutTxnComponent implements OnInit {
 

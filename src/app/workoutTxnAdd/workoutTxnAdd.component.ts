@@ -4,14 +4,17 @@ import { Router } from '@angular/router';
 import { AlertService } from '../alert.service';
 import { User } from '../models/user';
 import { DataService } from '../data.service';
-
+import {WorkoutListService} from '../workoutList.service';
 
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './workoutTxnAdd.component.html',
   styleUrls: ['./workoutTxnAdd.component.css'],
-  providers:[WorkoutTxnAddService]
+  providers:[
+    WorkoutTxnAddService,
+    WorkoutListService
+  ]
 })
 export class WorkoutTxnAddComponent implements OnInit {
 

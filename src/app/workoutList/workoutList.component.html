@@ -21,10 +21,10 @@
     </thead>
     <tbody>
       <tr *ngFor="let workout of workoutList; let i = index" (click)="WorkoutTxnredirect(i)" [class.active]="i == selectedRow">
-        <td>{{workout.workoutId}}</td>
-        <td>{{workout.title}}</td>
-        <td>{{workout.calBurntPerUnitTime}}</td>
-        <td>{{workout.unitTime}}</td>
+        <td>{{workout[0]}}</td>
+        <td>{{workout[1]}}</td>
+        <td>{{workout[2]}}</td>
+        <td>{{workout[3]}}</td>
       </tr>
     </tbody>
   </table>

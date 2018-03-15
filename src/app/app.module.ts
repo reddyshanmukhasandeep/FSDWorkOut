@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule }    from '@angular/common/http';
-
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { LoginComponent } from './login/login.component';
@@ -28,7 +27,7 @@ import { DlDateTimePickerDateModule } from 'angular-bootstrap-datetimepicker';
     WorkoutListComponent,
     WorkoutTxnComponent,
     WorkoutTxnAddComponent,
-    AlertComponent
+    AlertComponent,
   ],
   imports: [
     BrowserModule,
