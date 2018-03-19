@@ -32,6 +32,7 @@ export class WorkoutTxnAddComponent implements OnInit {
   }
 
   ngOnInit() {
+    
   }
   createWorkoutTxn() {
     this.loading = true;
@@ -45,7 +46,7 @@ export class WorkoutTxnAddComponent implements OnInit {
         .subscribe(
             data => {
                 this.alertService.success('Transaction Successfully Added', true);
-                this.router.navigate(['/workoutTxn']);
+                this.router.navigate(['./workoutTxn']);
             },
             error => {
                 this.alertService.error(error.error.message);

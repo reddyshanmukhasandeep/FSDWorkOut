@@ -6,6 +6,7 @@ import { Input } from '@angular/core';
 import { User } from '../models/user';
 import { DataService } from '../data.service';
 import {WorkoutListService} from '../workoutList.service';
+import {WorkoutTxnAddService} from '../workoutTxnAdd.service'
 
 @Component({
   selector: 'app-dashboard',
@@ -13,7 +14,8 @@ import {WorkoutListService} from '../workoutList.service';
   styleUrls: ['./workoutTxn.component.css'],
   providers:[
     WorkoutTxnService,
-    WorkoutListService
+    WorkoutListService,
+    WorkoutTxnAddService
     ]
 })
 export class WorkoutTxnComponent implements OnInit {
@@ -22,23 +24,26 @@ export class WorkoutTxnComponent implements OnInit {
   workout: any = {};
   loading = false;
   workoutTxnList: any=[];
+  workoutTxnAddService:any
   constructor(
     private router: Router,
     private workoutTxnService: WorkoutTxnService,
     private alertService: AlertService,
     private dataService: DataService
   ) { 
-    this.workoutTxnService.getWorkoutTxnList(this.user);
+    this.workoutTxnService.getWorkoutTxnList(this.workout.workoutId);
   }
 
   ngOnInit() {
     this.workout=this.dataService;
     console.log("workoutTxnService workout: "+this.workout.workoutId+" **data: "+this.dataService.getWorkoutId());
-    this.workoutTxnService.getWorkoutTxnList(this.dataService.workoutId)
+    this.workoutTxnService.getWorkoutTxnList(this.workout.workoutId)
         .subscribe(
             data => {
                
                this.workoutTxnList=data;
+               console.log(data);
+               
                console.log("Response: "+this.workoutTxnList);
             },
             error => {

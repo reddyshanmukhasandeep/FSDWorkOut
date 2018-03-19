@@ -11,12 +11,15 @@ export class WorkoutTxnAddService {
     private http: HttpClient,
     private urlProv: ServiceUrlProviderService
   ) { 
-      this.createWorkoutTxntUrl = urlProv.getCompleteServiceUrl("workoutTxn");
+      this.createWorkoutTxntUrl = urlProv.getCompleteServiceUrl("workoutTxn/");
   }
 
   createWorkoutTxn(workouTxn: any): Observable<any>{
      console.log("Inside WorkoutTxnAddService");
-    return this.http.post<any>(this.createWorkoutTxntUrl,workouTxn);
+     console.log(workouTxn);
+    
+     
+    return this.http.post<any>(this.createWorkoutTxntUrl , workouTxn);
   }
 
 }

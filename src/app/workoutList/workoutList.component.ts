@@ -38,6 +38,8 @@ export class WorkoutListComponent implements OnInit {
         .subscribe(
             data => {
                this.workoutList=data;
+               console.log(this.workoutList);
+               
             },
             error => {
                 this.alertService.error(error.error.message);
